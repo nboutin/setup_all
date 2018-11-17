@@ -7,6 +7,6 @@ alias gfh='git flow hotfix'
 
 alias add_clang='ln -s /data/code/coding_tools/clang/.clang-format'
 
-gcmake='cmake -H. -Bbuild'
-bcmake='cmake --build build'
-tcmake='cmake --build build --target test'
+alias gcmake='cmake -H. -Bbuild'
+alias bcmake='cmake --build build'
+alias tcmake='cmake --build build --target test'
