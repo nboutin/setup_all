@@ -1,32 +1,59 @@
-[color]
-    ui = auto
-[credential]
-    helper = cache --timeout=28800
 [user]
 	email = boutwork@gmail.com
-	name = nboutin
+	name = Nicolas Boutin
 [push]
     default = simple
+[credential]
+    helper = wincred
+# git-credential-cache only for Unix system
+#    helper = cache --timeout=300
+[core]
+    editor = vi
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
 [alias]
+    fa = fetch --all -j8
     st = status -sb
-    lg = log --oneline --decorate --graph -25 --all
-    co = checkout
     br = branch
-    su = submodule update --init --recursive
+    co = checkout
+    sui = submodule update --init --recursive
     dt = difftool
     mt = mergetool
+    rv = remote -v
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit -20
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all -20
+    dfc = diff --cached
+    commend = commit --amend --no-edit
 [status]
     submoduleSummary = true
 [diff]
     tool = bc3
 [difftool]
     prompt = false
+[difftool "meld"]
+    path = "D:\\prog\\meld\\Meld.exe"
+    cmd = \"D:/prog/meld/Meld.exe\" \"$LOCAL\" \"$REMOTE\"
+[difftool "araxis"]
+    path = "C:\\Program Files (x86)\\Araxis\\Araxis Merge v6.5\\Compare.exe"
 [difftool "bc3"]
-    trustExitCode = true
+    path = "D:\\prog\\Beyond Compare 3\\BComp.exe"
+    
 [merge]
     tool = bc3
 [mergetool]
-  prompt = false
+    prompt = false
+    keepBackup = false
+[mergetool "meld"]
+    path = D:/prog/meld/Meld.exe
+    cmd = \"D:/prog/meld/Meld.exe\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" --output=\"$MERGED\" --auto-merge
+[mergetool "araxis"]
+    path = "C:\\Program Files (x86)\\Araxis\\Araxis Merge v6.5\\Compare.exe"
 [mergetool "bc3"]
-    trustExitCode = true
+    path = "D:\\prog\\Beyond Compare 3\\BComp.exe"
     
+[http]
+#   proxy = http://user:pwd@ip:port
